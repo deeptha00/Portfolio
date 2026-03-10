@@ -42,7 +42,7 @@ export default function Experience() {
                     <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
                         Professional Path
                     </h2>
-                    <h3 className="text-4xl md:text-5xl font-display font-bold">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold">
                         Experience Timeline
                     </h3>
                 </motion.div>

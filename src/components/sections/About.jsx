@@ -24,7 +24,7 @@ export default function About() {
                     <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
                         The Journey
                     </h2>
-                    <h3 className="text-4xl md:text-5xl font-display font-bold">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold">
                         Innovative mindset. <br /> Full stack precision.
                     </h3>
                 </motion.div>
@@ -60,9 +60,9 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="mt-20 max-w-4xl mx-auto glass-card p-10 rounded-[40px] border-white/5"
+                    className="mt-20 max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl md:rounded-[40px] border-white/5"
                 >
-                    <p className="text-xl md:text-2xl text-white/70 leading-relaxed font-sans">
+                    <p className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed font-sans">
                         I'm a <span className="text-white font-bold">passionate software developer</span> based in Bengaluru, India.
                         With over <span className="text-purple-500 font-bold">3 years</span> of professional experience, I specialize in crafting high-performance
                         web and mobile applications integrated with <span className="text-blue-500 font-bold">AI and Cloud</span> technologies.

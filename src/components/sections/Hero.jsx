@@ -11,7 +11,7 @@ export default function Hero() {
 
     return (
         <section ref={containerRef} className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 py-24 pb-32 md:py-0">
 
                 {/* Left Content */}
                 <div className="flex-1 text-left z-10">
@@ -23,7 +23,7 @@ export default function Hero() {
                         <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
                             Welcome to the Future
                         </h2>
-                        <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
                             Hi, I'm <span className="text-purple-500">Deeptha A</span>
                         </h1>
 
@@ -40,13 +40,13 @@ export default function Hero() {
                             </motion.p>
                         </div>
 
-                        <div className="flex flex-wrap gap-4">
-                            <MagneticButton href="#projects" className="px-8 py-4 bg-purple-600 rounded-full font-medium flex items-center gap-2 hover:bg-purple-500 transition-all glow-hover">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full">
+                            <MagneticButton href="#projects" className="px-8 py-4 bg-purple-600 rounded-full font-medium flex justify-center items-center gap-2 hover:bg-purple-500 transition-all glow-hover w-full sm:w-auto">
                                 <LayoutGrid size={20} />
                                 View Projects
                             </MagneticButton>
 
-                            <MagneticButton href="#contact" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-medium flex items-center gap-2 backdrop-blur-md hover:bg-white/10 transition-all">
+                            <MagneticButton href="#contact" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-medium flex justify-center items-center gap-2 backdrop-blur-md hover:bg-white/10 transition-all w-full sm:w-auto">
                                 <Mail size={20} />
                                 Contact
                             </MagneticButton>
@@ -55,7 +55,7 @@ export default function Hero() {
                                 href="/resume/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-white border border-white rounded-full text-black font-medium flex items-center gap-2 transition-all hover:bg-white/90"
+                                className="px-8 py-4 bg-white border border-white rounded-full text-black font-medium flex justify-center items-center gap-2 transition-all hover:bg-white/90 w-full sm:w-auto"
                             >
                                 <FileText size={20} />
                                 View Resume

@@ -16,7 +16,7 @@ export default function MacDock() {
 
     return (
         <div
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center p-2 rounded-2xl glass-card border border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.1)] gap-4 px-6 scale-[0.85] md:scale-100 origin-bottom"
+            className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center p-2 rounded-2xl glass-card border border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.1)] gap-2 md:gap-4 px-4 md:px-6 scale-[0.7] sm:scale-90 md:scale-100 origin-bottom whitespace-nowrap w-max max-w-[95vw]"
             onMouseMove={(e) => mouseX.set(e.pageX)}
             onMouseLeave={() => mouseX.set(Infinity)}
         >

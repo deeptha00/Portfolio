@@ -19,7 +19,7 @@ export default function Contact() {
                             <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
                                 Get In Touch
                             </h2>
-                            <h3 className="text-5xl md:text-6xl font-display font-bold mb-8">
+                            <h3 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-8">
                                 Let's build <br /> something <span className="text-purple-500">epic.</span>
                             </h3>
                             <p className="text-xl text-white/50 leading-relaxed mb-12">
@@ -44,7 +44,7 @@ export default function Contact() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="glass-card p-10 rounded-[40px] border-white/5 space-y-8"
+                            className="glass-card p-6 md:p-10 rounded-[2rem] md:rounded-[40px] border-white/5 space-y-6 md:space-y-8"
                             action="https://formsubmit.co/deepthaa23@gmail.com"
                             method="POST"
                         >
@@ -55,7 +55,7 @@ export default function Contact() {
                                     name="name"
                                     required
                                     placeholder="John Doe"
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 md:px-6 md:py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20"
                                 />
                             </div>
 
@@ -66,7 +66,7 @@ export default function Contact() {
                                     name="email"
                                     required
                                     placeholder="john@example.com"
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 md:px-6 md:py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20"
                                 />
                             </div>
 
@@ -77,7 +77,7 @@ export default function Contact() {
                                     required
                                     rows="4"
                                     placeholder="Your vision..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20 resize-none"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 md:px-6 md:py-4 outline-none focus:border-purple-500/50 transition-all text-white placeholder:text-white/20 resize-none"
                                 />
                             </div>
 
