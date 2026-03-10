@@ -52,7 +52,7 @@ export default function Hero() {
                             </MagneticButton>
 
                             <MagneticButton
-                                href="/resume/resume.pdf"
+                                href={`${import.meta.env.BASE_URL}resume/resume.pdf`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-white border border-white rounded-full text-black font-medium flex justify-center items-center gap-2 transition-all hover:bg-white/90 w-full sm:w-auto"

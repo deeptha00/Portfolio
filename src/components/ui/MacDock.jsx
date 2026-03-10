@@ -8,7 +8,7 @@ const icons = [
     { name: 'Skills', icon: Code2, href: '#skills' },
     { name: 'Projects', icon: Folder, href: '#projects' },
     { name: 'Contact', icon: Mail, href: '#contact' },
-    { name: 'Resume', icon: FileText, href: '/resume/resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
+    { name: 'Resume', icon: FileText, href: `${import.meta.env.BASE_URL}resume/resume.pdf`, target: '_blank', rel: 'noopener noreferrer' },
 ]
 
 export default function MacDock() {

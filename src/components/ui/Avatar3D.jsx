@@ -5,7 +5,7 @@ import * as THREE from 'three'
 
 function AvatarMesh() {
     const meshRef = useRef()
-    const texture = useTexture('/Profile_Image/profile.png')
+    const texture = useTexture(`${import.meta.env.BASE_URL}Profile_Image/profile.png`)
 
     // Fix texture orientation if its upside down
     texture.colorSpace = THREE.SRGBColorSpace
