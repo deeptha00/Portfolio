@@ -15,18 +15,37 @@ export default function About() {
         <section id="about" className="py-32 px-4 relative">
             <div className="container mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: true }}
                     className="text-center mb-20"
+                    variants={{
+                        hidden: {},
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
                 >
-                    <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
+                    <motion.h2
+                        variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="text-purple-500 font-display font-medium tracking-[0.3em] uppercase mb-4 text-sm"
+                    >
                         The Journey
-                    </h2>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold">
+                    </motion.h2>
+                    <motion.h3
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="text-4xl sm:text-5xl md:text-6xl font-display font-bold leading-tight"
+                    >
                         Innovative mindset. <br /> Full stack precision.
-                    </h3>
+                    </motion.h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -63,7 +82,7 @@ export default function About() {
                     className="mt-20 max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl md:rounded-[40px] border-white/5"
                 >
                     <p className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed font-sans">
-                        I'm a <span className="text-white font-bold">passionate software developer</span> based in Bengaluru, India.
+                        Passionate<span className="text-white font-bold">software developer</span> based in Bengaluru, India.
                         With over <span className="text-purple-500 font-bold">3 years</span> of professional experience, I specialize in crafting high-performance
                         web and mobile applications integrated with <span className="text-blue-500 font-bold">AI and Cloud</span> technologies.
                         My approach blends clean code with premium aesthetics, ensuring every project is not just functional, but an experience.

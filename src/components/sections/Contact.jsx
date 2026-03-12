@@ -11,17 +11,36 @@ export default function Contact() {
 
                     <div className="flex-1">
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
+                            initial="hidden"
+                            whileInView="visible"
                             viewport={{ once: true }}
+                            variants={{
+                                hidden: {},
+                                visible: {
+                                    transition: {
+                                        staggerChildren: 0.1
+                                    }
+                                }
+                            }}
                         >
-                            <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
+                            <motion.h2
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="text-purple-500 font-display font-medium tracking-[0.3em] uppercase mb-4 text-sm"
+                            >
                                 Get In Touch
-                            </h2>
-                            <h3 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-8">
+                            </motion.h2>
+                            <motion.h3
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-8 leading-tight"
+                            >
                                 Let's build <br /> something <span className="text-purple-500">epic.</span>
-                            </h3>
+                            </motion.h3>
                             <p className="text-xl text-white/50 leading-relaxed mb-12">
                                 Have a project in mind or just want to say hi?
                                 I'm always open to discussing new opportunities and innovation.

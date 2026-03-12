@@ -33,18 +33,37 @@ export default function Skills() {
         <section id="skills" className="py-32 px-4 bg-white/[0.02]">
             <div className="container mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: true }}
                     className="text-center mb-20"
+                    variants={{
+                        hidden: {},
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
                 >
-                    <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
+                    <motion.h2
+                        variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="text-purple-500 font-display font-medium tracking-[0.3em] uppercase mb-4 text-sm"
+                    >
                         Capabilities
-                    </h2>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold">
+                    </motion.h2>
+                    <motion.h3
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="text-4xl sm:text-5xl md:text-6xl font-display font-bold"
+                    >
                         Technical Arsenal
-                    </h3>
+                    </motion.h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -5,25 +5,25 @@ const experiences = [
     {
         company: "FortunesoftIT Innovations",
         role: "Software Developer",
-        period: "2023 - Present",
+        period: "October 2025 - Present",
         description: "Developing scalable full-stack solutions and integrating advanced AI models into enterprise applications."
     },
     {
         company: "Narrow Labs",
         role: "Full Stack Developer",
-        period: "2022 - 2023",
+        period: "March 2025 - October 2025",
         description: "Focused on building modern web applications with React and Node.js, delivering high-performance UI/UX."
     },
     {
         company: "Aptener Mechatronics",
         role: "Software Engineer",
-        period: "2021 - 2022",
+        period: "June 2023 - January 2025",
         description: "Worked on IoT integrations and dashboard systems for mechatronic devices."
     },
     {
         company: "Kovenantz Technologies",
-        role: "Intern Developer",
-        period: "2020 - 2021",
+        role: "Programmer Trainee",
+        period: "November 2022 - May 2023",
         description: "Gained foundational experience in mobile app development and cloud infrastructure."
     }
 ]

@@ -14,36 +14,124 @@ export default function Hero() {
             <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 py-24 pb-32 md:py-0">
 
                 {/* Left Content */}
-                <div className="flex-1 text-left z-10">
+                <motion.div
+                    className="flex-1 text-left z-10"
+                    animate={{
+                        y: [-5, 5, -5],
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: {
+                                opacity: 1,
+                                transition: {
+                                    staggerChildren: 0.12,
+                                    delayChildren: 0.2
+                                }
+                            }
+                        }}
                     >
-                        <h2 className="text-purple-500 font-display font-medium tracking-widest uppercase mb-4">
+                        <motion.h2
+                            variants={{
+                                hidden: { opacity: 0, y: 10 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="text-purple-400 font-display font-medium tracking-[0.4em] uppercase mb-4 text-xs md:text-sm"
+                        >
                             Welcome to the Future
-                        </h2>
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
-                            Hi, I'm <span className="text-purple-500">Deeptha A</span>
-                        </h1>
+                        </motion.h2>
 
-                        <div className="h-20 mb-8">
-                            <motion.p
-                                className="text-xl md:text-2xl text-white/70 font-sans max-w-2xl leading-relaxed"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.5, duration: 1 }}
+                        <motion.h1
+                            className="text-6xl sm:text-7xl md:text-[5.5rem] font-display font-bold mb-8 leading-[1.05]"
+                        >
+                            <motion.span
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="block text-white/90 text-4xl sm:text-5xl md:text-6xl mb-2"
                             >
-                                Software Developer & AI Engineer
-                                <br />
-                                <span className="text-white/40 italic">Building AI, Web, Mobile & Cloud Systems</span>
+                                Hi, I'm
+                            </motion.span>
+                            <span className="relative inline-block">
+                                {"Deeptha A".split("").map((char, index) => (
+                                    <motion.span
+                                        key={index}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+                                            visible: { opacity: 1, y: 0, filter: "blur(0px)" }
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: 0.5 + index * 0.05,
+                                            ease: "easeOut"
+                                        }}
+                                        className="inline-block text-purple-500 hover:text-purple-400 transition-colors cursor-default"
+                                    >
+                                        {char === " " ? "\u00A0" : char}
+                                    </motion.span>
+                                ))}
+                                <motion.span
+                                    className="absolute -bottom-2 left-0 h-[2px] bg-purple-500/50"
+                                    initial={{ width: 0 }}
+                                    animate={{ width: "100%" }}
+                                    transition={{ delay: 1.5, duration: 1.2, ease: "circOut" }}
+                                />
+                            </span>
+                        </motion.h1>
+
+                        <div className="space-y-6 mb-12">
+                            <div className="flex items-center gap-3">
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ delay: 1, type: "spring", stiffness: 200 }}
+                                    className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]"
+                                />
+                                <motion.p
+                                    variants={{
+                                        hidden: { opacity: 0, x: -10 },
+                                        visible: { opacity: 1, x: 0 }
+                                    }}
+                                    className="text-xl md:text-3xl text-white/90 font-sans font-light tracking-tight"
+                                >
+                                    Software Developer <span className="text-purple-500/50">&</span> AI Engineer
+                                </motion.p>
+                            </div>
+
+                            <motion.p
+                                variants={{
+                                    hidden: { opacity: 0 },
+                                    visible: { opacity: 1 }
+                                }}
+                                transition={{ delay: 1.5 }}
+                                className="text-lg md:text-xl text-white/40 italic font-sans pl-5 border-l border-white/10"
+                            >
+                                Building AI, Web, Mobile & Cloud Systems
                             </motion.p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full">
-                            <MagneticButton href="#projects" className="px-8 py-4 bg-purple-600 rounded-full font-medium flex justify-center items-center gap-2 hover:bg-purple-500 transition-all glow-hover w-full sm:w-auto">
-                                <LayoutGrid size={20} />
-                                View Projects
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="flex flex-col sm:flex-row flex-wrap gap-5 w-full"
+                        >
+                            <MagneticButton href="#projects" className="px-8 py-4 bg-purple-600 rounded-full font-medium flex justify-center items-center gap-2 hover:bg-purple-500 transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] w-full sm:w-auto group relative overflow-hidden">
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+                                />
+                                <LayoutGrid size={20} className="relative z-10" />
+                                <span className="relative z-10">View Projects</span>
                             </MagneticButton>
 
                             <MagneticButton href="#contact" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-medium flex justify-center items-center gap-2 backdrop-blur-md hover:bg-white/10 transition-all w-full sm:w-auto">
@@ -55,14 +143,14 @@ export default function Hero() {
                                 href={`${import.meta.env.BASE_URL}resume/resume.pdf`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-white border border-white rounded-full text-black font-medium flex justify-center items-center gap-2 transition-all hover:bg-white/90 w-full sm:w-auto"
+                                className="px-8 py-4 bg-white/10 border border-white/20 rounded-full text-white font-medium flex justify-center items-center gap-2 transition-all hover:bg-white hover:text-black w-full sm:w-auto"
                             >
                                 <FileText size={20} />
                                 View Resume
                             </MagneticButton>
-                        </div>
+                        </motion.div>
                     </motion.div>
-                </div>
+                </motion.div>
 
                 {/* Right Visual (Image) */}
                 <div className="flex-1 relative flex justify-center items-center">
