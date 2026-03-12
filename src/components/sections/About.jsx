@@ -82,7 +82,7 @@ export default function About() {
                     className="mt-20 max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-3xl md:rounded-[40px] border-white/5"
                 >
                     <p className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed font-sans">
-                        Passionate<span className="text-white font-bold">software developer</span> based in Bengaluru, India.
+                        Passionate <span className="text-white font-bold">software developer</span> based in Bengaluru, India.
                         With over <span className="text-purple-500 font-bold">3 years</span> of professional experience, I specialize in crafting high-performance
                         web and mobile applications integrated with <span className="text-blue-500 font-bold">AI and Cloud</span> technologies.
                         My approach blends clean code with premium aesthetics, ensuring every project is not just functional, but an experience.
