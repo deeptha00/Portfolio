@@ -2,10 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Lenis from '@studio-freight/lenis'
-
-// Initialize Lenis for smooth scrolling
-const lenis = new Lenis()
+import { lenis } from './lib/lenis'
 
 function raf(time) {
     lenis.raf(time)
