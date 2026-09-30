@@ -62,14 +62,9 @@ export default function Hero() {
                             fetchpriority="high"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-base/80 via-transparent to-transparent" />
-                        <div className="absolute bottom-0 inset-x-0 p-5 flex items-end justify-between gap-4">
-                            <div>
-                                <p className="font-semibold text-lg leading-tight">{profile.name}</p>
-                                <p className="text-sm text-fg/70">{profile.title}, {profile.company}</p>
-                            </div>
-                            <span className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-accent">
-                                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />Building
-                            </span>
+                        <div className="absolute bottom-0 inset-x-0 p-5">
+                            <p className="font-semibold text-lg leading-tight">{profile.name}</p>
+                            <p className="text-sm text-fg/70">{profile.title}, {profile.company}</p>
                         </div>
                     </div>
                     {['-top-2 -left-2 border-t border-l', '-top-2 -right-2 border-t border-r', '-bottom-2 -left-2 border-b border-l', '-bottom-2 -right-2 border-b border-r'].map(c => (
