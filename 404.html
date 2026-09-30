@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page not found | Deeptha A</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a0d12" />
+  <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
+  <link rel="apple-touch-icon" href="/Portfolio/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --base: #0a0d12; --surface: #10141b; --line: #232b37;
+      --fg: #e7eaf0; --dim: #8a93a4; --accent: #2fc7b0; --err: #f0616d;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { color-scheme: dark; }
+    body {
+      min-height: 100vh; display: flex; flex-direction: column;
+      background: var(--base); color: var(--fg);
+      font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--accent); color: var(--base); }
+    a { color: inherit; text-decoration: none; }
+
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 15%, transparent 72%);
+              mask-image: radial-gradient(ellipse at 50% 35%, #000 15%, transparent 72%);
+    }
+    .glow {
+      position: fixed; top: -180px; left: 50%; width: 760px; height: 760px; transform: translateX(-50%);
+      border-radius: 50%; background: rgba(47,199,176,0.08); filter: blur(120px); pointer-events: none;
+    }
+
+    header {
+      position: relative; z-index: 1; border-bottom: 1px solid var(--line);
+      background: rgba(10,13,18,0.85); backdrop-filter: blur(8px);
+    }
+    .bar { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: baseline; gap: 12px; }
+    .brand b { font-weight: 600; letter-spacing: -0.01em; }
+    .brand span { font: 11px var(--mono); color: var(--dim); }
+    .bar a.home {
+      font: 12px var(--mono); text-transform: uppercase; letter-spacing: .08em;
+      border: 1px solid var(--accent); color: var(--accent); padding: 8px 14px; transition: .2s;
+    }
+    .bar a.home:hover { background: var(--accent); color: var(--base); }
+
+    main {
+      position: relative; z-index: 1; flex: 1; width: 100%; max-width: 1280px; margin: 0 auto;
+      padding: 72px 24px 64px; display: grid; gap: 56px; align-content: center;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 980px) { main { grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 72px; } }
+
+    .kicker { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--err); display: flex; align-items: center; gap: 10px; }
+    .kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--err); animation: pulse 1.6s ease-in-out infinite; }
+
+    .code {
+      margin-top: 18px; font-weight: 700; letter-spacing: -0.06em; line-height: .86;
+      font-size: clamp(6.5rem, 22vw, 15rem);
+      color: transparent;
+      background: linear-gradient(180deg, #e7eaf0 0%, var(--accent) 48%, rgba(47,199,176,.04) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      position: relative; width: fit-content;
+    }
+    .code i { font-style: normal; }
+
+    h1 { margin-top: 26px; font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.06; font-weight: 700; letter-spacing: -0.025em; }
+    .lead { margin-top: 16px; max-width: 34rem; color: var(--dim); font-size: 1.075rem; line-height: 1.65; }
+
+    .req {
+      margin-top: 28px; max-width: 34rem; border: 1px solid var(--line); background: var(--surface);
+      padding: 14px 16px; font: 12.5px/1.6 var(--mono); color: var(--dim); overflow-wrap: anywhere;
+    }
+    .req b { color: var(--fg); font-weight: 500; }
+    .req .ok { color: var(--accent); } .req .bad { color: var(--err); }
+
+    .cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; font-size: .9rem; font-weight: 500; cursor: pointer; transition: .2s; font-family: inherit; }
+    .btn.primary { background: var(--accent); color: var(--base); border: 1px solid var(--accent); }
+    .btn.primary:hover { filter: brightness(1.1); }
+    .btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* diagram card */
+    .card { border: 1px solid var(--line); background: rgba(10,13,18,.75); }
+    .card-head { display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid var(--line); font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+    .card-head em { font-style: normal; color: var(--err); }
+    .card svg { display: block; width: 100%; height: auto; padding: 18px; }
+    .node rect { fill: var(--surface); stroke: #2b3543; stroke-width: 1.25; }
+    .node .bar { fill: var(--accent); opacity: .7; }
+    .node.bad rect { stroke: var(--err); stroke-dasharray: 5 4; }
+    .node.bad .bar { fill: var(--err); opacity: 1; }
+    .t { fill: var(--fg); font: 600 15px 'Inter', sans-serif; }
+    .s { fill: var(--dim); font: 10px var(--mono); }
+    .edge { fill: none; stroke: var(--accent); stroke-width: 1.75; stroke-dasharray: 4 8; animation: flow 1s linear infinite; }
+    .edge.broken { stroke: #4a566a; stroke-width: 1.5; animation: none; stroke-dasharray: 3 6; }
+    .x { stroke: var(--err); stroke-width: 2.4; stroke-linecap: round; transform-origin: 452px 232px; animation: blink 1.6s ease-in-out infinite; }
+    .foot-links { display: flex; flex-wrap: wrap; border-top: 1px solid var(--line); }
+    .foot-links a { flex: 1 1 33%; padding: 14px 18px; font: 12px var(--mono); color: var(--dim); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: .2s; }
+    .foot-links a:hover { background: var(--surface); color: var(--accent); }
+    .foot-links a span { color: var(--accent); margin-right: 6px; }
+
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--line); }
+    footer .bar { height: auto; padding: 20px 24px; font: 12px var(--mono); color: var(--dim); flex-wrap: wrap; gap: 8px; }
+
+    @keyframes flow { to { stroke-dashoffset: -24; } }
+    @keyframes pulse { 50% { opacity: .35; } }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    @media (prefers-reduced-motion: reduce) { .edge, .x, .kicker::before { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow"></div>
+
+  <header>
+    <div class="bar">
+      <a class="brand" href="/Portfolio/"><b>Deeptha A</b><span>/ CTO, Nexlifie</span></a>
+      <a class="home" href="/Portfolio/">Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <p class="kicker">Error 404 — Page not found</p>
+      <div class="code" aria-hidden="true">4<i>0</i>4</div>
+      <h1>This route doesn't exist.</h1>
+      <p class="lead">
+        The page you're looking for was moved, renamed, or never existed. The rest of the system is running fine, so let's get you back to it.
+      </p>
+
+      <div class="req" role="status">
+        <span class="ok">GET</span> <b id="path">/</b><br />
+        <span class="bad">&rarr; 404 Not Found</span> &nbsp;·&nbsp; no matching resource at this address
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="/Portfolio/">Back to home &rarr;</a>
+        <button class="btn ghost" type="button" onclick="history.length > 1 ? history.back() : location.assign('/Portfolio/')">Go back</button>
+      </div>
+    </section>
+
+    <aside class="card" aria-label="Diagram of a failed request">
+      <div class="card-head"><span>Fig. 404 — Request trace</span><em>Unresolved</em></div>
+      <svg viewBox="0 86 520 190" role="img" aria-label="Request travels from client to router, then fails to reach the missing page">
+        <!-- edges -->
+        <path class="edge" d="M 130 150 H 190" />
+        <path class="edge broken" d="M 330 150 H 372" />
+        <!-- client -->
+        <g class="node">
+          <rect x="20" y="106" width="110" height="88" /><rect class="bar" x="20" y="106" width="3" height="88" />
+          <text class="t" x="38" y="142">Client</text><text class="s" x="38" y="164">your browser</text>
+        </g>
+        <!-- router -->
+        <g class="node">
+          <rect x="190" y="106" width="140" height="88" /><rect class="bar" x="190" y="106" width="3" height="88" />
+          <text class="t" x="208" y="142">Router</text><text class="s" x="208" y="164">/Portfolio/*</text>
+        </g>
+        <!-- missing page -->
+        <g class="node bad">
+          <rect x="390" y="106" width="110" height="88" /><rect class="bar" x="390" y="106" width="3" height="88" />
+          <text class="t" x="408" y="142">Page</text><text class="s" x="408" y="164">not found</text>
+        </g>
+        <!-- break marker -->
+        <g class="x">
+          <line x1="444" y1="222" x2="460" y2="238" /><line x1="460" y1="222" x2="444" y2="238" />
+        </g>
+        <text class="s" x="20" y="262">200 OK</text>
+        <text class="s" x="190" y="262">200 OK</text>
+        <text class="s" x="390" y="262" style="fill: var(--err)">404 Not Found</text>
+      </svg>
+      <div class="foot-links">
+        <a href="/Portfolio/#profile"><span>01</span>Profile</a>
+        <a href="/Portfolio/#architecture"><span>02</span>Architecture</a>
+        <a href="/Portfolio/#nexlifie"><span>03</span>Nexlifie</a>
+        <a href="/Portfolio/#craft"><span>04</span>What I build</a>
+        <a href="/Portfolio/#domains"><span>05</span>Domains</a>
+        <a href="/Portfolio/#contact"><span>06</span>Contact</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="bar">
+      <span id="year"></span>
+      <span>CTO &amp; Co-Founder · Nexlifie · Bengaluru, India</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var p = location.pathname + location.search + location.hash;
+      document.getElementById('path').textContent = p.length > 90 ? p.slice(0, 87) + '…' : p;
+      document.getElementById('year').textContent = '© ' + new Date().getFullYear() + ' Deeptha A';
+    })();
+  </script>
+</body>
+</html>
